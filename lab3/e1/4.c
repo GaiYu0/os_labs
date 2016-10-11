@@ -9,7 +9,7 @@ struct sigaction sigact;
 int n = 0;
 
 void sigint_handler (int sig) {
-  printf ("n = %d; Signal recu : %d\n", n, sig);
+  printf ("n: %d; Signal: %d\n", n, sig);
   if (n == 0) {
     sigact.sa_handler = SIG_IGN;
     sigaction (SIGINT, &sigact, NULL);

@@ -7,12 +7,17 @@
 sigset_t sig;
 struct sigaction sigact;
 
+void handler(int signal) {
+  return;
+}
+
 int main () {
   sigemptyset (&sig);
   sigaddset (&sig, SIGINT);
   sigact.sa_mask = sig;
   sigact.sa_flags = 0;
-  sigact.sa_handler = SIG_IGN;
+  sigact.sa_handler = &handler;
+  // sigact.sa_handler = SIG_IGN;
   sigaction (SIGALRM, &sigact, NULL);
   alarm (5);
   sigsuspend (&sig);
