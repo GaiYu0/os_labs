@@ -12,7 +12,6 @@ char *command;
 
 void execute(int signal) {
   execlp("/bin/sh", "/bin/sh", "-c", command, NULL);
-  exit(0);
 }
 
 int main(int argc, char *argv[]){
@@ -33,7 +32,6 @@ int main(int argc, char *argv[]){
         int i;
         for (i = 0; i != command_count; i++) {
           kill(pids[i], SIGQUIT);
-          free(command);
         }
         return 0;
       }
@@ -59,6 +57,9 @@ int main(int argc, char *argv[]){
         wait(&status);
         if (WEXITSTATUS(status) != 0) {
           printf("Error occurred.\n");
+          for (; command_count != BUFFER_SIZE; command_count++) {
+            wait(&status);
+          }
           return -1;
         }
       }

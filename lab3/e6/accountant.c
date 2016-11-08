@@ -31,9 +31,9 @@ int main() {
   struct sigaction action;
   action.sa_flags = 0;
   action.sa_mask = mask;
+  action.sa_handler = &handler;
   int i;
-  for (i = 0; i != NSIG; i++) {
-    action.sa_handler = &handler;
+  for (i = 1; i != NSIG; i++) {
     sigaction(i, &action, NULL);
   }
   while(1) {
