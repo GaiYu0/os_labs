@@ -1,0 +1,84 @@
+ABCDE
+
+123
+45
+
+lseek
+fg
+hi
+
+123
+45
+lseek
+fg
+hi
+  fghiE12345
+
+123
+lseek
+45
+fg
+hi
+  fghiE12345
+
+123
+lseek
+fg
+45
+hi
+  fghiE12345
+
+123
+lseek
+fg
+hi
+45
+  fghiE12345
+
+lseek
+123
+45
+fg
+hi
+  123fghi5
+
+lseek
+123
+fg
+45
+hi
+  123fghi45
+
+lseek
+123
+fg
+hi
+45
+  123fghi45
+
+lseek
+fg
+123
+45
+hi
+  fg123hi
+
+lseek
+fg
+123
+hi
+45
+  fg123hi45 
+
+lseek
+fg
+hi
+123
+45
+  fghi12345
+
+fghiE12345
+123fghi45
+fg123hi
+fg123hi45 
+fghi12345
